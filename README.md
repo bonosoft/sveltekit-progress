@@ -96,7 +96,7 @@ Now you can start adding progress components to your pages.
 
 ## Showing you own center content
 
-![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c0bd0533f7766ad54eca52ef3121d0d657d8b2be/readme/style7.png?raw=true)
+![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c849398c291e6c8df53143d41401059109812850/readme/style7.png?raw=true)
 ```ts
 <Progress size="150" progress="50" customContent=false>
  <svg width="30" height="30" viewBox="0 0 24 24"> <path.../> </svg>
