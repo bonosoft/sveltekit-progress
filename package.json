@@ -1,6 +1,26 @@
 {
-	"name": "sveltekit-progress",
+	"name": "@bonosoft/sveltekit-progress",
+	"description": "Progress component for SvelteKit",
 	"version": "0.0.1",
+	"author": "Bonosoft",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bonosoft/sveltekit-progress.git"
+	},
+	"bugs": {
+		"url": "https://github.com/bonosoft/sveltekit-progress/issues"
+	},
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"progress",
+		"percent",
+		"dashboard",
+		"status",
+		"circele",
+		"donut"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
