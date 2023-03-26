@@ -1,58 +1,112 @@
-# create-svelte
+# Progress circle for SvelteKit
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+## Install
+Use your package manager to install the module:
+```shell
+npm install @bonosoft/sveltekit-progress
 ```
 
-## Developing
+## Adding Progress to a svelte file in SvelteKit
+Now you can start adding progress components to your pages.
+```ts
+<script lang="ts">
+	import Progress from "@bonosoft/sveltekit-progress"
+</script>
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+<Progress progress="50"/>
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```bash
-npm run package
+# Sample code
+![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c0bd0533f7766ad54eca52ef3121d0d657d8b2be/readme/style1.png?raw=true)
+```ts
+<Progress progress="0"/>
+<Progress progress="25"/>
+<Progress progress="50"/>
+<Progress progress="75"/>
+<Progress progress="100"/>
 ```
 
-To create a production version of your showcase app:
+## Front, back and border colors, for use in dark mode
 
-```bash
-npm run build
+![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c0bd0533f7766ad54eca52ef3121d0d657d8b2be/readme/style2.png?raw=true)
+
+```ts
+<Progress progress="0"   textColor="#eee" bgcolor="#111" borderColor="#333"/>
+<Progress progress="25"  textColor="#eee" bgcolor="#111" borderColor="#333"/>
+<Progress progress="50"  textColor="#eee" bgcolor="#111" borderColor="#333"/>
+<Progress progress="75"  textColor="#eee" bgcolor="#111" borderColor="#333"/>
+<Progress progress="100" textColor="#eee" bgcolor="#111" borderColor="#333"/>
+
+<Progress progress="30" color="#29F" textColor="#eee" bgcolor="#111" borderColor="#333"/>
+<Progress progress="40" color="#2F2" textColor="#eee" bgcolor="#111" borderColor="#333"/>
+<Progress progress="50" color="#F92" textColor="#eee" bgcolor="#111" borderColor="#333"/>
+<Progress progress="60" color="#F22" textColor="#eee" bgcolor="#111" borderColor="#333"/>
+<Progress progress="70" color="#92F" textColor="#eee" bgcolor="#111" borderColor="#333"/>
 ```
 
-You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Front, back and border colors
 
-## Publishing
+![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c0bd0533f7766ad54eca52ef3121d0d657d8b2be/readme/style3.png?raw=true)
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
+```ts
+<Progress progress="30" color="#29F" textColor="#29F"/>
+<Progress progress="40" textColor="#F22"/>
+<Progress progress="50" textColor="#29F" labelText="Online"/>
+<Progress progress="60" labelText="Backup"/>
+<Progress progress="70" textColor="#292" borderColor="#F22"/>
+```
 
-To publish your library to [npm](https://www.npmjs.com):
 
-```bash
-npm publish
+
+## Size
+
+![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c0bd0533f7766ad54eca52ef3121d0d657d8b2be/readme/style4.png?raw=true)
+
+```ts
+<Progress progress=0 size=30/>
+<Progress progress=25 size=50/>
+<Progress progress=50 size=70/>
+<Progress progress=75 size=90/>
+<Progress progress=100 size=110/>
+```
+
+
+## Border width
+
+![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c0bd0533f7766ad54eca52ef3121d0d657d8b2be/readme/style5.png?raw=true)
+```ts
+<Progress progress=0 borderWeight="1"/>
+<Progress progress=25 borderWeight="3"/>
+<Progress progress=50 borderWeight="8"/>
+<Progress progress=75 borderWeight="15"/>
+<Progress progress=100 borderWeight="20"/>
+```
+
+## Border radius
+
+![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c0bd0533f7766ad54eca52ef3121d0d657d8b2be/readme/style6.png?raw=true)
+```ts
+<Progress progress=12.5 borderRadius=0/>
+<Progress progress=25 borderRadius=15/>
+<Progress progress=50 borderRadius=30/>
+<Progress progress=85 borderRadius=40/>
+<Progress progress=100 borderRadius=50/>
+```
+
+## Showing you own center content
+
+![Progress circles](https://github.com/bonosoft/sveltekit-progress/blob/c0bd0533f7766ad54eca52ef3121d0d657d8b2be/readme/style7.png?raw=true)
+```ts
+<Progress size="150" progress="50" customContent=false>
+ <svg width="30" height="30" viewBox="0 0 24 24"> <path.../> </svg>
+</Progress>  
+
+<Progress size="150" progress="50" customContent="true">
+ Text
+</Progress>  
+
+<Progress size="150" progress="50" customContent="true">
+ <svg width="80" height="80" viewBox="0 0 384 512"><path.../></svg>
+</Progress>  
 ```
