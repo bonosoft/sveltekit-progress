@@ -18,8 +18,14 @@
 		"percent",
 		"dashboard",
 		"status",
-		"circele",
-		"donut"
+		"gauge",
+		"pressure",
+		"circle",
+		"circular",
+		"rounded",
+		"square",
+		"donut",
+		"risk"
 	],
 	"scripts": {
 		"dev": "vite dev",
